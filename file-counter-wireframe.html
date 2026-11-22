@@ -1,0 +1,75 @@
+<style>
+  #file-counter-wireframe {
+    color: #20242b;
+    font-family: "Segoe UI", system-ui, sans-serif;
+  }
+  #file-counter-wireframe .stage { padding: 28px; }
+  #file-counter-wireframe .app {
+    background: #fbfbfa;
+    border: 2px solid #25282d;
+    border-radius: 8px;
+    box-shadow: 8px 8px 0 #d7d9dc;
+    overflow: hidden;
+  }
+  #file-counter-wireframe .titlebar {
+    display: flex; align-items: center; gap: 9px;
+    height: 38px; padding: 0 14px; border-bottom: 2px solid #25282d;
+    background: #e8e9e8; font-size: 13px; font-weight: 600;
+  }
+  #file-counter-wireframe .dots { display: flex; gap: 5px; }
+  #file-counter-wireframe .dot { width: 9px; height: 9px; border: 1px solid #25282d; border-radius: 50%; background: #fff; }
+  #file-counter-wireframe .body { padding: 22px; }
+  #file-counter-wireframe .toolbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+  #file-counter-wireframe h1 { margin: 0; font-size: 20px; font-weight: 600; }
+  #file-counter-wireframe .muted { color: #666b72; font-size: 13px; }
+  #file-counter-wireframe button { background: #fff; border: 1px solid #25282d; border-radius: 4px; padding: 7px 11px; color: #25282d; font: inherit; font-size: 13px; }
+  #file-counter-wireframe .dropzone { border: 2px dashed #777d85; border-radius: 7px; padding: 19px; margin-bottom: 16px; text-align: center; background: repeating-linear-gradient(-45deg, #fff, #fff 7px, #f2f3f2 7px, #f2f3f2 14px); }
+  #file-counter-wireframe .dropzone strong { display: block; margin-bottom: 4px; font-size: 14px; }
+  #file-counter-wireframe .panes { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(200px, 1fr); gap: 16px; }
+  #file-counter-wireframe .pane { min-width: 0; }
+  #file-counter-wireframe .pane-title { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 7px; font-size: 14px; font-weight: 600; }
+  #file-counter-wireframe .badge { padding: 2px 7px; border: 1px solid #25282d; border-radius: 20px; font-size: 11px; font-weight: 500; }
+  #file-counter-wireframe .list { border: 1px solid #aeb2b7; border-radius: 5px; background: #fff; overflow: hidden; }
+  #file-counter-wireframe .file-row { display: flex; align-items: center; gap: 9px; padding: 10px; border-bottom: 1px solid #e1e3e5; font-size: 13px; }
+  #file-counter-wireframe .file-row:last-child { border-bottom: 0; }
+  #file-counter-wireframe .doc { width: 15px; height: 18px; border: 1px solid #555b62; background: #f1f2f2; flex: none; }
+  #file-counter-wireframe .filename { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  #file-counter-wireframe .ext { margin-left: auto; color: #686e75; font-family: ui-monospace, monospace; font-size: 12px; }
+  #file-counter-wireframe .type-row { display: grid; grid-template-columns: 62px 1fr 27px; align-items: center; gap: 7px; padding: 10px; border-bottom: 1px solid #e1e3e5; font: 12px ui-monospace, monospace; }
+  #file-counter-wireframe .type-row:last-child { border-bottom: 0; }
+  #file-counter-wireframe .track { height: 8px; background: #e6e8e9; border-radius: 2px; overflow: hidden; }
+  #file-counter-wireframe .bar { height: 100%; background: #6b737b; }
+  #file-counter-wireframe .count { text-align: right; font-family: "Segoe UI", system-ui, sans-serif; font-weight: 600; }
+  #file-counter-wireframe .empty { border: 2px dashed #7b8086; border-radius: 7px; height: 226px; display: grid; place-items: center; text-align: center; background: #f8f8f7; }
+  #file-counter-wireframe .empty-box { width: 42px; height: 42px; margin: 0 auto 9px; border: 2px solid #4e555c; border-radius: 5px; }
+  @media (max-width: 560px) { #file-counter-wireframe .stage { padding: 14px; } #file-counter-wireframe .panes { grid-template-columns: 1fr; } }
+</style>
+<div id="file-counter-wireframe" class="viz-carousel viz-dotted-background" aria-label="File type counter wireframe alternatives">
+  <section data-variant="Loaded files" aria-label="Loaded file state wireframe">
+    <div class="stage">
+      <main class="app">
+        <div class="titlebar"><div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div> File Type Counter</div>
+        <div class="body">
+          <div class="toolbar"><div><h1>File Type Counter</h1><span class="muted">Drop files to group them by type</span></div><button type="button">Clear files</button></div>
+          <div class="dropzone"><strong>Drop more files here</strong><span class="muted">or drag them anywhere into this window</span></div>
+          <div class="panes">
+            <section class="pane"><div class="pane-title"><span>Files</span><span class="badge">8 loaded</span></div><div class="list"><div class="file-row"><span class="doc"></span><span class="filename">holiday-photo.jpg</span><span class="ext">JPG</span></div><div class="file-row"><span class="doc"></span><span class="filename">project-brief.pdf</span><span class="ext">PDF</span></div><div class="file-row"><span class="doc"></span><span class="filename">launch-assets.zip</span><span class="ext">ZIP</span></div><div class="file-row"><span class="doc"></span><span class="filename">notes.txt</span><span class="ext">TXT</span></div><div class="file-row"><span class="doc"></span><span class="filename">…</span></div></div></section>
+            <section class="pane"><div class="pane-title"><span>File types</span><span class="muted">by count</span></div><div class="list"><div class="type-row"><span>.jpg</span><span class="track"><span class="bar" style="width:100%"></span></span><span class="count">4</span></div><div class="type-row"><span>.pdf</span><span class="track"><span class="bar" style="width:50%"></span></span><span class="count">2</span></div><div class="type-row"><span>.zip</span><span class="track"><span class="bar" style="width:25%"></span></span><span class="count">1</span></div><div class="type-row"><span>.txt</span><span class="track"><span class="bar" style="width:25%"></span></span><span class="count">1</span></div></div></section>
+          </div>
+        </div>
+      </main>
+    </div>
+  </section>
+  <section data-variant="Empty state" aria-label="Empty file state wireframe" hidden>
+    <div class="stage">
+      <main class="app">
+        <div class="titlebar"><div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div> File Type Counter</div>
+        <div class="body">
+          <div class="toolbar"><div><h1>File Type Counter</h1><span class="muted">A quick view of what you dropped in</span></div></div>
+          <div class="empty"><div><div class="empty-box"></div><strong>Drop files here</strong><div class="muted" style="margin-top:5px">Their types and counts will appear beside the list.</div></div></div>
+          <div class="panes" style="margin-top:16px"><section class="pane"><div class="pane-title"><span>Files</span><span class="badge">0 loaded</span></div></section><section class="pane"><div class="pane-title"><span>File types</span><span class="muted">by count</span></div></section></div>
+        </div>
+      </main>
+    </div>
+  </section>
+</div>
